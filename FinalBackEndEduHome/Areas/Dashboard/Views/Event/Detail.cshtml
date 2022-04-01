@@ -1,0 +1,53 @@
+﻿@model EventTVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+
+
+
+                        <h1 style="margin-bottom:45px">
+                            @Model.Event.Title
+                        </h1>
+
+
+                        <img style="margin-bottom:45px" src="~/assets/img/event/@Model.Event.MainImage">
+                        <p>
+                            @Model.Event.Date.ToString("dd MMMM yyyy") / @Model.Event.Venue
+                        </p>
+
+                        <p style="margin-bottom:25px">
+                            @Model.Event.Desc
+                        </p>
+
+
+
+                        <h3 style="margin-bottom:10px">Speakers</h3>
+
+                        @foreach (var item in Model.Speakers)
+                        {
+                            <p>
+                                @item.FullName
+                            </p>
+
+                            <img src="~/assets/img/event/@item.Image">
+
+
+
+                        }
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

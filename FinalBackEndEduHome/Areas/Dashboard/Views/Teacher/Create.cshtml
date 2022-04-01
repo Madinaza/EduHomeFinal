@@ -1,0 +1,119 @@
+﻿@model TeacherPostVm
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Scripts{
+    <partial name="_PartialView" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#Description'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+}
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Update Teacher</h4>
+                        <form class="forms-sample" method="post" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Fullname</label>
+                                <input asp-for="Fullname" class="form-control" placeholder="">
+                                <span asp-validation-for="Fullname" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">About</label>
+                                <textarea asp-for="About" class="form-control" placeholder=""></textarea>
+                                <span asp-validation-for="About" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Degree</label>
+                                <input asp-for="Degree" class="form-control" placeholder="">
+                                <span asp-validation-for="Degree" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Experience</label>
+                                <input asp-for="Experience" class="form-control" placeholder="">
+                                <span asp-validation-for="Experience" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Faculty</label>
+                                <input asp-for="Faculty" class="form-control" placeholder="">
+                                <span asp-validation-for="Faculty" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Profession</label>
+                                <input asp-for="Proffesion" class="form-control" placeholder="">
+                                <span asp-validation-for="Proffesion" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Hobbies</label>
+                                <input asp-for="Hobbies" class="form-control" placeholder="">
+                                <span asp-validation-for="Hobbies" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Image</label>
+                                <input asp-for="ImageFile" accept="image/*" class="form-control" placeholder="Image">
+                                <span asp-validation-for="ImageFile" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Image</label>
+                                <input asp-for="DetailimgFile" accept="image/*" class="form-control" placeholder="Image">
+                                <span asp-validation-for="DetailimgFile" class="text-danger"></span>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Facebook</label>
+                                <input asp-for="TeacherContact.FacebookURL" class="form-control" placeholder="">
+                                <span asp-validation-for="TeacherContact.FacebookURL" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Instagram</label>
+                                <input asp-for="TeacherContact.InstagramURL" class="form-control" placeholder="">
+                                <span asp-validation-for="TeacherContact.InstagramURL" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Tweeter</label>
+                                <input asp-for="TeacherContact.TwitterURL" class="form-control" placeholder="">
+                                <span asp-validation-for="TeacherContact.TwitterURL" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Pinteres</label>
+                                <input asp-for="TeacherContact.PinterestURL" class="form-control" placeholder="">
+                                <span asp-validation-for="TeacherContact.PinterestURL" class="text-danger"></span>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <label for="exampleInputUsername1">Skills</label>
+                                <select class="form-control" asp-for="SkillIds">
+                                    @foreach (var s in Model.Skills)
+                                    {
+                                        <option value="@s.Id">@s.SkillName</option>
+                                    }
+                                </select>
+
+                                <span asp-validation-for="SkillIds" class="text-danger"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary me-2">Submit</button>
+                            <a class="btn btn-light" asp-action="Index">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,71 @@
+﻿@model Course
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h4 class="card-title">@Model.Title</h4>
+
+                        <img width="300px" height="300px" src="~/assets/img/course/@Model.Image">
+
+                        <p style="margin-bottom:20px">
+                            @Html.Raw(Model.Description)
+
+                        </p>
+                        <h4 style="margin-bottom:20px">
+                            Features:
+                        </h4>
+                        <ul>
+                            <li>
+                                Assesments: @Model.Feature.Assements
+                            </li>
+                            <li>
+                                Duration: @Model.Feature.Duration
+                            </li>
+                            <li>
+                                CourseDuration: @Model.Feature.ClassDuration
+                            </li>
+                            <li>
+                                Language: @Model.Feature.Language
+                            </li>
+                            <li>
+                                Students: @Model.Feature.Student
+                            </li>
+                            <li>
+                                Starts: @Model.Feature.Starts.ToString("dd, MMMM yyyy")
+                            </li>
+                            <li>
+                                SkillLevel: @Model.Feature.SkillLevel
+                            </li>
+                            <li>
+                                Price: @Model.Feature.Price
+                            </li>
+                        </ul>
+
+
+
+                        <h4 style="margin-bottom:20px">
+                            Categories:
+                        </h4>
+                        <ul>
+                            @foreach (var item in Model.CourseCategories)
+                            {
+                                <li style="margin-bottom:20px">
+                                    Category Name : @item.Category.Name
+                                </li>
+
+                            }
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

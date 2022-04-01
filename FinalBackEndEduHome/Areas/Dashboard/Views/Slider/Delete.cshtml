@@ -1,0 +1,30 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">@Model.Title)</h4>
+
+                        <p>
+                            @Html.Raw(Model.Description)
+                        </p>
+                        <p style="color:red">
+                            Are you sure to delete?
+                        </p>
+                    </div>
+                    <a style="width:300px ;text-decoration:none" asp-action="Index" asp-controller="Slider" class="btn btn btn-outline-dark " type="button"> Cancel</a>
+                    <form method="post" asp-action="Delete" asp-controller="Slider" asp-route-id="@Model.Id">
+                        <button style="width:300px" type="submit" class="btn btn-outline-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

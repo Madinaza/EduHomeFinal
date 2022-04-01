@@ -1,0 +1,107 @@
+﻿@model Layout
+
+<header class="top">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-8">
+                    <div class="header-top-left">
+                        <p>HAVE ANY QUESTION ?  +880 5698  598  6587</p>
+                    </div>
+
+                </div>
+                <div class="col-md-4 col-sm-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="header-area two header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-5 col-6">
+                    <div class="logo">
+                        <a href="index.html"><img src="~/assets/img/logo/@Model.Logo" alt="eduhome" /></a>
+                    </div>
+                </div>
+                <div class="col-md-10 col-sm-7 col-6">
+                    <div class="content-wrapper text-end">
+                        <!-- Main Menu Start -->
+                        <div class="main-menu">
+                            <nav>
+                                <ul>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="Home">Home</a>
+
+                                    </li>
+                                    <li><a asp-action="Index" asp-controller="About">About</a></li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="Course">courses</a>
+
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="Event">event</a>
+
+                                    </li>
+                                    <li class="hidden-sm">
+                                        <a asp-action="Index" asp-controller="Teacher">teacher</a>
+
+                                    </li>
+                                    <li>
+                                        <a asp-controller="Blog" asp-action="Index">blog</a>
+
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="contact.html">Buy Now</a>
+                                    <li>
+                                        @if (!User.Identity.IsAuthenticated)
+                                        {
+                                            <a asp-action="Login" asp-controller="Account" class="text-danger">SignIn</a>
+                                        }
+                                        else
+                                        {
+                                            <a asp-action="Logout" asp-controller="Account" class="text-danger">LogOut</a>
+
+
+                                        }
+
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Search Form Start-->
+                        <div class="search-btn">
+                            <ul class="header-search search-toggle">
+                                <li class="search-menu">
+                                    <i class="fa fa-search"></i>
+                                </li>
+                            </ul>
+                            <div class="search">
+                                <div class="search-form">
+                                    <form id="search-form" action="#">
+                                        <input type="search" placeholder="Search here..." name="search" />
+                                        <button type="submit">
+                                            <span><i class="fa fa-search"></i></span>
+                                        </button>
+                                    </form>
+
+                                </div>
+
+
+
+
+                            </div>
+
+
+                            <!--End of Search Form-->
+                            <!-- Main Menu End -->
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile-menu hidden-sm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
